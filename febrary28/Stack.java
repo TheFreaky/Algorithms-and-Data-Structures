@@ -1,9 +1,9 @@
-package febrary9;
+package febrary28;
 
 /**
  * Created by Максим on 09.02.2017.
  */
-public class Stack implements Sequence {
+public class Stack<T> implements Sequence<T> {
     private int length;
     private Object[] arr;
 
@@ -13,7 +13,7 @@ public class Stack implements Sequence {
     }
 
     @Override
-    public void push(Object obj) {
+    public void push(T obj) {
         Object[] newArr = new Object[length + 1];
         System.arraycopy(arr, 0, newArr, 0, length);
         arr = newArr;
@@ -23,13 +23,13 @@ public class Stack implements Sequence {
     }
 
     @Override
-    public Object pop() {
+    public T pop() {
         length--;
         Object obj = arr[length];
 
         Object[] newArr = new Object[length];
         System.arraycopy(arr, 0, newArr, 0, length);
-        return obj;
+        return (T) obj;
     }
 
     @Override

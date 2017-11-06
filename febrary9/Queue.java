@@ -5,7 +5,7 @@ package febrary9;
  */
 public class Queue implements Sequence {
     private int length;
-    Object[] arr;
+    private Object[] arr;
 
     public Queue() {
         length = 0;
@@ -29,6 +29,8 @@ public class Queue implements Sequence {
 
         Object[] newArr = new Object[length];
         System.arraycopy(arr, 1, newArr, 0, length);
+        arr = newArr;
+
         return obj;
     }
 
